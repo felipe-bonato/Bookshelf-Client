@@ -1,17 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import ReactRouter from 'react-router-dom'
+import './styles/index.css';
+import App from './components/layouts/app';
+import Home from './components/home'
 //import reportWebVitals from './reportWebVitals';
 //import * as serviceWorker from './serviceWorker';
 
 const renderReactDom = () => {
-  ReactDOM.render(
+  /*ReactDOM.render(
     <React.StrictMode>
       <App />
     </React.StrictMode>,
     document.getElementById('root')
-  );
+  );*/
+  ReactDOM.render(
+    <React.StrictMode>
+      <App>
+        <Home books={[
+          {
+            'name': 'Book name',
+            'author': 'me',
+            'coverImg': 'none',
+            'id:': '123'
+          }
+        ]}/>
+      </App>
+    </React.StrictMode>,
+    document.getElementById('root')
+  )
 }
 
 if(window.cordova) {
