@@ -63,33 +63,33 @@
 	margin-bottom: 1rem;
 }
 
-.main {
-	width: var(--width-con-mobile);
+#main {
+	/*width: var(--width-con-mobile);*/
 
-	margin: 32px auto calc(32px + 54px) auto;
+	margin: 32px .5rem calc(32px + 54px);
 	padding: var(--padding-con);
 
 	background-color: var(--primary-light);
 	border-radius: var(--rounding);
 }
 
-.bsForm {
+.form {
 	display: flex;
 	flex-direction: column;
 
 	gap: 2rem
 }
 
-.bsForm fieldset {
+.form fieldset {
 	display: flex;
 	flex-direction: column;
 }
 
-.bsForm fieldset label {
+.form fieldset label {
 	font-size: 1.25rem;
 }
 
-.bsForm fieldset input {
+.form fieldset input {
 	width: 100%;
 
 	padding: .5rem;
@@ -98,7 +98,7 @@
 	font-size: 1.75rem;
 }
 
-.bsForm fieldset button[type="submit"] {
+.form fieldset button[type="submit"] {
 	height: 3rem;
 	border-radius: var(--rounding);
 
@@ -108,7 +108,7 @@
 	background-color: var(--primary-dark);
 }
 
-.bsButton {
+.button {
 	width: 100%;
 
 	height: 3rem;
@@ -120,19 +120,21 @@
 	background-color: var(--primary-dark);
 }
 
-.bsHome_bookcon {
+.home_books {
 	display: grid;
 	gap: 1rem;
 	grid-template-columns: 1fr 1fr;
 }
 
-.bsHome_book img {
+.home_book img {
 	width: 100%;
 	height: 100%;
 }
 
-.bsBook_listing li {
+.book_listing li {
 	list-style-type: none;
-
 }
 
+.profile_email {
+	margin-bottom: 1rem;
+}

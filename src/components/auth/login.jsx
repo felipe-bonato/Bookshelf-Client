@@ -1,9 +1,8 @@
-var React = require('react')
-var Base  = require('../layouts/default')
+import React from 'react'
 
-module.exports = function Login(props) {
+export default function Login(props) {
 	return (
-		<Base title="Login" hasPageTitle={true} showNavBar={false}>
+		<div className="content">
 			<form action="/api/login" method="POST" className="bsForm">
 				<fieldset>
 					<label htmlFor="email">Email</label>
@@ -17,7 +16,9 @@ module.exports = function Login(props) {
 					<button type="submit">Login</button>
 				</fieldset>
 			</form>
-			<div>Don't have an account? <a href="/register">Try registring</a></div>
-		</Base>
+			<small>Don't have an account? <a href="/register">Try registring</a></small>
+		</div>
 	)
 }
+
+// <Base title="Login" hasPageTitle={true} showNavBar={false}>

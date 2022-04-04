@@ -1,7 +1,6 @@
-var React = require('react')
-var Base  = require('../layouts/default')
+import React from 'react'
 
-module.exports = class Register extends React.Component {
+export default class Register extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {value: ''}
@@ -21,7 +20,7 @@ module.exports = class Register extends React.Component {
 	
 	render() {
 		return (
-			<Base title="Register" hasPageTitle={true} showNavBar={true}>
+			<div>
 				<form onSubmit={ this.handleSubmit } action="/api/register" method="POST">
 					<fieldset>
 						<label htmlFor="email">Email</label>
@@ -39,7 +38,9 @@ module.exports = class Register extends React.Component {
 						<button type="submit">Register</button>
 					</fieldset>
 				</form>
-			</Base>
+			</div>
 		);
 	}
 }
+
+// <Base title="Register" hasPageTitle={true} showNavBar={true}>

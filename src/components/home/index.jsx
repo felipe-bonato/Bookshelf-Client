@@ -1,21 +1,38 @@
 import React from 'react'
-import App from '../../components/layouts/app'
 import Book from '../../components/home/book'
+// import mainUrl from '../../helpers/bsUrls'
 
-export default function Home(props) {
-	return (
-		<App title="Home" showNavBar={true}>
-			<div className="bsHome_bookcon">{ props.books ?
-					props.books.map(
-					(book, idx) => <Book
-						title={ book.name }
-						author={ book.author }
-						coverImg={ `${book._id}.jpg` }
-						bookId={ book._id }
-						key={ idx }
-					/> )
-					: "There's none book right now"
-				}</div>
-		</App>
-	)
+const bsBackendUrl = 'http://localhost:8080/'
+
+export default class Home extends React.Component {
+	constructor(props) {
+		super(props)
+		this.state = { books: [] }
+	}
+
+	componentDidMount() {
+		fetch(bsBackendUrl + 'api/home')
+			.then(res => res.json())
+			.then(data => this.setState({ 'books': data.books }))
+			.catch(console.error)
+	}
+
+	render() {
+		return (
+			<div className="content">
+				{ this.state.books ?
+					<div className="home_books">{
+						this.state.books.map((book, idx) => <Book
+							bookId={ book._id }
+							title={ book.name }
+							author={ book.author }
+							coverImg={ bsBackendUrl + `uploads/${book._id}.jpg` }
+							key={ idx }
+						/>)
+					}</div>
+					: "There's no books right now, maybe come back later. :)"
+				}
+			</div>
+		)
+	}
 }

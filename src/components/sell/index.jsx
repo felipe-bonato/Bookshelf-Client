@@ -1,10 +1,8 @@
-var React = require('react')
-var Base  = require('../layouts/default')
-var Title = require('../layouts/title')
+import React from 'react'
 
-module.exports = function Sell(props) {
+export default function Sell(props) {
 	return (
-		<Base title="Sell" hasPageTitle={true} showNavBar={true}>
+		<div className="content">
 			<form action="/api/sell" method="POST" encType="multipart/form-data" className="bsForm">
 				<fieldset>
 					<label htmlFor="image">Image</label>
@@ -26,6 +24,8 @@ module.exports = function Sell(props) {
 					<button type="submit" value="Submit">Sell</button>
 				</fieldset>
 			</form>
-		</Base>
+		</div>
 	)
 }
+
+// <Base title="Sell" hasPageTitle={true} showNavBar={true}>
